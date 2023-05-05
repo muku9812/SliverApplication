@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sliver_application/screens/sliverToBoxPage.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -63,10 +64,21 @@ class _HomeScreenState extends State<HomeScreen>
             floating: true,
             flexibleSpace: Container(),
             expandedHeight: 100,
-            actions: const [
+            actions: [
               Padding(
                 padding: EdgeInsets.only(right: 20),
                 child: Icon(Icons.search),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 20),
+                child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SliverToBoxscreen()));
+                    },
+                    child: Icon(Icons.pages)),
               ),
               Padding(
                 padding: EdgeInsets.only(right: 20),
